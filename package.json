@@ -1,0 +1,78 @@
+{
+  "name": "marked-mermaidjs",
+  "version": "0.2.1",
+  "description": "Marked.js extensions to render Mermaid.js",
+  "main": "./lib/index.cjs",
+  "module": "./src/index.js",
+  "browser": "./lib/index.umd.js",
+  "type": "module",
+  "keywords": [
+    "marked",
+    "extension",
+    "mermaidjs"
+  ],
+  "engines": {
+    "npm": "^10.8.x",
+    "node": "^20.18.x"
+  },
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./lib/index.cjs"
+    }
+  },
+  "scripts": {
+    "test": "jest --verbose",
+    "test:cover": "jest --coverage",
+    "lint": "eslint .",
+    "build": "rollup -c rollup.config.js",
+    "dev": "rollup -c rollup.config.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbolack-ab/marked-mermaid.git"
+  },
+  "author": "Michiel De Mey <michiel@spaceowl.be> (https://spaceowl.be)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dbolack-ab/marked-mermaid/issues"
+  },
+  "homepage": "https://github.com/dbolack-ab/marked-mermaid#readme",
+  "peerDependencies": {
+    "marked": "11.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-typescript": "^7.24.1",
+    "@jest/globals": "^29.7.0",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^12.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.0.3",
+    "@semantic-release/npm": "^12.0.0",
+    "@semantic-release/release-notes-generator": "^13.0.0",
+    "@types/jest": "^29.5.12",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest-cli": "^29.7.0",
+    "marked": "11.2.0",
+    "rollup": "^4.14.1",
+    "semantic-release": "^23.0.7",
+    "ts-jest": "^29.1.2"
+  },
+  "dependencies": {
+    "lodash.memoize": "^4.1.2",
+    "mermaid": "^11.0.0"
+  }
+}
