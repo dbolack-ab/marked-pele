@@ -1,24 +1,27 @@
-# marked-mermaid
+# marked-pele
 
-This is a slight fork of MichielDeMey's marked-mermaid extension that is currently dormant. This brings the version of marked forward and pins the mermaid version for compatibility reasons for use with the [homebrewery project.](https://github.com/naturalcrit/homebrewery)
+Use Mermaid style diagrams via pele.run
 
 # Usage
 
 ```js
 import {marked} from "marked";
-import markedMermaid from "marked-mermaid";
+import markedPele from "marked-pele";
 
-// or UMD script
-// <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
-// <script src="https://cdn.jsdelivr.net/npm/marked-mermaid/lib/index.umd.js"></script>
+const peleOptions = { langs: ['pele'] };
 
-const options = {
-	// |default options|
-};
+marked.use(markedPele(peleOptions));
 
-marked.use(markedMermaid(options));
+marked.parse(```pele
+block
+  blockArrowId<["Label"]>(right)
+  blockArrowId2<["Label"]>(left)
+  blockArrowId3<["Label"]>(up)
+  blockArrowId4<["Label"]>(down)
+  blockArrowId5<["Label"]>(x)
+  blockArrowId6<["Label"]>(y)
+  blockArrowId7<["Label"]>(x, down)
+```);
 
-marked.parse("|example markdown|");
-// <p>|example html|</p>
 ```
 
